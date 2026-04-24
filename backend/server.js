@@ -9,13 +9,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ API route (for evaluator)
+
 app.use("/bfhl", bfhlRoute);
 
-// ✅ Serve frontend test page
+
 app.use(express.static(path.join(__dirname, "../frontend")));
 
-// ✅ Home page (browser test entry)
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
